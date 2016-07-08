@@ -1,1 +1,1 @@
-Welcome to Nous! Go ahead and play around.
+Welcome to Wakey.js! Go ahead and play around.
