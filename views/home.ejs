@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Wakey Console</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel=
+            "stylesheet">
+            <link href=
+                "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css"
+                rel="stylesheet">
+                <script src=
+                "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js">
+                </script>
+                <script src=
+                "http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js">
+                </script>
+                <link href="http://s33.postimg.org/3y8bth01r/test.png" rel=
+                    "apple-touch-icon" sizes="120x120">
+                    <LINK REL="favicon" HREF="http://s33.postimg.org/3y8bth01r/test.ico" TYPE="image/ico" />
+                </head>
+                <body>
+                    <nav>
+                        <div class="nav-wrapper #00bfa5 orange accent-4">
+                            <a class="brand-logo" href="http://YourIP:3000/">&nbsp; Nous</a> <a class=
+                            "button-collapse" data-activates="mobile-demo" href="#"><i class=
+                        "material-icons">menu</i></a>
+                        <ul class="right hide-on-med-and-down">
+                            <li>
+                                <a href="YourIP:3000/">Home</a>
+                            </li>
+                        </ul>
+                        <ul class="side-nav" id="mobile-demo">
+                            <li>
+                                <a href="http://YourIP:3000/">Home</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="fixed-action-btn horizontal click-to-toggle" style=
+                    "bottom: 45px; right: 24px;">
+                    <a class="btn-floating btn-large orange lighten-1"><i class=
+                    "material-icons waves-effect">menu</i></a>
+                    <ul>
+                        <li>
+                            <a class="waves-effect btn-floating #69f0ae green accent-2" id=
+                                "SpotPlay" name="action" onclick=
+                                "Materialize.toast('Playing', 1000, 'green')" type="submit"><i class=
+                            "material-icons">play_arrow</i></a>
+                        </li>
+                        <li>
+                            <a class="waves-effect btn-floating red" id=
+                                "SpotPause" name="action" onclick=
+                                "Materialize.toast('Pausing', 1000, 'red')" type="submit"><i class=
+                            "material-icons">pause</i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col s12 m4">
+                            <div class="card small hoverable">
+                                <div class="card-content white-text red darken-2">
+                                    <span class="card-title">YouTube - Broken at the moment</span>
+                                </div>
+                                <div class="card-action">
+                                    <form action="http://YourIP:3000/YouTubeSearch"
+                                        method="get">
+                                        <input name="query" type="text"> <button class=
+                                        "btn-floating btn-large waves-effect waves-light red hoverable"
+                                        type="submit"><i class=
+                                        "material-icons">play_circle_filled</i></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col s12 m4">
+                                    <div class="card hoverable">
+                                        <div class="card-image">
+                                            <img id="show_images" src=
+                                            "http://YourIP:3000/SpotifyCurrent.png">
+                                            <span class="card-title">Spotify</span>
+                                        </div>
+                                        <div class="card-action">
+                                            <form action="http://YourIP:3000/SpotSearch"
+                                                method="get">
+                                                <input name="SpotQuery" type="text"><button class=
+                                                "btn-floating btn-large waves-effect waves-light green hoverable"
+                                                type="submit"><i class=
+                                                "material-icons">play_circle_filled</i></button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col s12 m4">
+                                    <div class="card hoverable">
+                                        <div class="card-content white-text blue lighten-1">
+                                            <span class="card-title">Twitter</span>
+                                        </div>
+                                        <div class="card-action">
+                                            <a class="twitter-timeline" data-tweet-limit="1" href="https://twitter.com/TheNextWeb">Tweets by TheNextWeb</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s12 m4">
+                            <div class="card hoverable">
+                                <div class="card-content white-text teal lighten-1">
+                                    <span class="card-title h1">Empty</span>
+                                </div>
+                                <div class="card-action">
+                                    <a class="waves-effect btn-floating red" id="hueblue" "hueblue" name="action" type="submit"><i class="material-icons">pause</i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </body>
+        </html>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js">
+        </script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js">
+        </script>
+        <script type="text/javascript">
+        setInterval(function () {
+        var d = new Date();
+        $("#show_images").attr("src", "/SpotifyCurrent.png?"+d.getTime());
+        }, 100);
+        $('#SpotPlayTrack').click(function() {
+        $.post('http://YourIP:3000/SpotifyPlayTrack')
+        }
+        );
+        $('#SpotPlay').click(function() {
+        $.post('http://YourIP:3000/SpotifyPlay')
+        }
+        );
+        $('#SpotPause').click(function() {
+        $.post('http://YourIP:3000/SpotifyPause')
+        }
+        );
+        $('#SpotQuery').click(function() {
+        $.get('http://http://YourIP:3000/SpotSearch')
+        }
+        );
+        </script>

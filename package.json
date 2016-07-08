@@ -1,0 +1,25 @@
+{
+  "name": "Wakey.js",
+  "version": "0.0.1",
+  "os" : [ "!win32" ],
+  "description" : "It's Alive :)",
+  "main": "server.js",
+  "license": "MIT",
+  "author": "Blake Mastrud",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blakeman399/Wakey.js"
+  },
+  "dependencies": {
+    "@jonny/spotify-web-helper": "^1.0.4",
+    "body-parser": "^1.15.2",
+    "ejs": "^2.4.2",
+    "express": "^4.14.0",
+    "middleware": "^1.0.0",
+    "process-exists": "^2.1.0",
+    "request": "^2.72.0",
+    "spotify-web-api-node": "^2.3.0",
+    "watson-developer-cloud": "^1.10.0",
+    "youtube-node": "^1.3.0"
+  }
+}
